@@ -26,7 +26,7 @@ export default function SignInPage() {
       <div className="shadow-2xl px-6 pt-8 pb-8 rounded-t-full rounded-b-xl w-full max-w-md" >
         <div className="mb-8 text-center">
           <h1 className="mb-2 font-bold text-white text-3xl">Welcome to EthBee</h1>
-          <p className="text-gray-400">Your AI-powered Solana trading platform</p>
+          <p className="text-gray-400">Your AI-powered Ethereum trading platform</p>
         </div>
         <SignInForm onSuccess={handleSuccess} onSwitchToSignUp={() => router.push('/auth/signup')} />
         <div className="mt-6 text-center">

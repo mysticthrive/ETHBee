@@ -84,7 +84,7 @@ export async function signUp(data: SignUpData): Promise<AuthResponse> {
       })
       .select()
       .single()
-
+      
     if (userError || !newUser) {
       return {
         success: false,

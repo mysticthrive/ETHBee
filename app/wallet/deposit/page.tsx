@@ -105,8 +105,8 @@ export default function DepositPage() {
               <ArrowLeft className="mr-2 w-4 h-4" />
               Back to Dashboard
             </Link>
-            <h1 className="mb-2 font-bold text-white text-3xl">Deposit SOL</h1>
-            <p className="text-gray-400">Add SOL to your EthBee wallet</p>
+            <h1 className="mb-2 font-bold text-white text-3xl">Deposit ETH</h1>
+            <p className="text-gray-400">Add ETH to your EthBee wallet</p>
           </div>
 
           {message && (
@@ -177,13 +177,13 @@ export default function DepositPage() {
                   Quick Deposit
                 </CardTitle>
                 <CardDescription className="text-gray-400">
-                  Demo deposit - Add SOL to your wallet instantly
+                  Demo deposit - Add ETH to your wallet instantly
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="deposit-amount" className="text-gray-300">
-                    Amount (SOL)
+                    Amount (ETH)
                   </Label>
                   <Input
                     id="deposit-amount"
@@ -223,7 +223,7 @@ export default function DepositPage() {
                   ) : (
                     <>
                       <Download className="mr-2 w-4 h-4" />
-                      Deposit SOL
+                      Deposit ETH
                     </>
                   )}
                 </Button>
