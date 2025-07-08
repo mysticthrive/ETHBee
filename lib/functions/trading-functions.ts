@@ -4,11 +4,11 @@ import { ChatCompletionTool } from "openai/resources/chat/completions";
 const tokenProperties = {
   token_address: {
     type: "string",
-    description: "The Solana address of the token. MUST preserve exact case sensitivity."
+    description: "The Ethereum address of the token. MUST preserve exact case sensitivity."
   },
   token_symbol: {
     type: "string",
-    description: "The symbol of the token (e.g., SOL, USDC, BONK)."
+    description: "The symbol of the token (e.g., ETH, USDC, BONK)."
   }
 };
 
@@ -269,7 +269,7 @@ const getTokenInfoSchema: ChatCompletionTool = {
   type: "function" as const,
   function: {
     name: "get_token_info",
-    description: "Get information about a token on Solana.",
+    description: "Get information about a token on Ethereum.",
     parameters: {
       type: "object",
       properties: tokenProperties,
@@ -283,13 +283,13 @@ const getWalletBalanceSchema: ChatCompletionTool = {
   type: "function" as const,
   function: {
     name: "get_wallet_balance",
-    description: "Get the overall wallet balance including SOL and all token balances.",
+    description: "Get the overall wallet balance including ETH and all token balances.",
     parameters: {
       type: "object",
       properties: {
         include_tokens: {
           type: "boolean",
-          description: "Whether to include token balances in addition to SOL balance."
+          description: "Whether to include token balances in addition to ETH balance."
         }
       },
       required: []
@@ -542,7 +542,7 @@ export function convertFunctionCallToResponse(functionName: string, args: Functi
     default:
       return {
         action: "message",
-        content: "I couldn't understand that request. Please try something like 'Buy 0.5 SOL' or 'Sell 10 BONK'."
+        content: "I couldn't understand that request. Please try something like 'Buy 0.5 ETH' or 'Sell 10 BONK'."
       };
   }
 }

@@ -27,7 +27,7 @@ export default function TokenSearchDemo() {
             <div className="text-center">
                 <h1 className="mb-2 font-bold text-3xl">Token Search Demo</h1>
                 <p className="text-gray-600">
-                    Dynamic token lookup using Jupiter API and Solana Token List
+                    Dynamic token lookup using Jupiter API and Ethereum Token List
                 </p>
             </div>
 

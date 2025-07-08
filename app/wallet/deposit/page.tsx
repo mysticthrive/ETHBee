@@ -263,8 +263,8 @@ export default function DepositPage() {
                   2
                 </div>
                 <div>
-                  <p className="font-medium">Send SOL from external wallet</p>
-                  <p className="text-gray-400 text-sm">Transfer SOL from Phantom, Solflare, or any Solana wallet</p>
+                  <p className="font-medium">Send ETH from external wallet</p>
+                  <p className="text-gray-400 text-sm">Transfer ETH from Phantom, Solflare, or any Ethereum wallet</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

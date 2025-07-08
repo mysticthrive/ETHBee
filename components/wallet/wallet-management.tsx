@@ -45,7 +45,7 @@ export function WalletManagement() {
       if (result.success) {
         updateWalletBalance(result.newBalance)
         setDepositAmount("")
-        setMessage({ type: "success", text: `Successfully deposited ${depositAmount} SOL` })
+        setMessage({ type: "success", text: `Successfully deposited ${depositAmount} ETH` })
       } else {
         setMessage({ type: "error", text: result.error || "Deposit failed" })
       }
@@ -79,7 +79,7 @@ export function WalletManagement() {
         updateWalletBalance(result.newBalance)
         setWithdrawAmount("")
         setWithdrawAddress("")
-        setMessage({ type: "success", text: `Successfully withdrew ${withdrawAmount} SOL` })
+        setMessage({ type: "success", text: `Successfully withdrew ${withdrawAmount} ETH` })
       } else {
         setMessage({ type: "error", text: result.error || "Withdrawal failed" })
       }
@@ -120,13 +120,13 @@ export function WalletManagement() {
             <Wallet className="w-5 h-5" />
             Your Wallet
           </CardTitle>
-          <CardDescription>Manage your Solana wallet</CardDescription>
+          <CardDescription>Manage your Ethereum wallet</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
             <div>
               <Label className="text-sm font-medium">Balance</Label>
-              <p className="text-2xl font-bold">{wallet.balance.toFixed(4)} SOL</p>
+              <p className="text-2xl font-bold">{wallet.balance.toFixed(4)} ETH</p>
             </div>
           </div>
 
@@ -164,13 +164,13 @@ export function WalletManagement() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Download className="w-5 h-5" />
-                Deposit SOL
+                Deposit ETH
               </CardTitle>
-              <CardDescription>Add SOL to your wallet (Demo)</CardDescription>
+              <CardDescription>Add ETH to your wallet (Demo)</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="deposit-amount">Amount (SOL)</Label>
+                <Label htmlFor="deposit-amount">Amount (ETH)</Label>
                 <Input
                   id="deposit-amount"
                   type="number"
@@ -181,7 +181,7 @@ export function WalletManagement() {
                 />
               </div>
               <Button onClick={handleDeposit} disabled={!depositAmount || isLoading} className="w-full">
-                {isLoading ? "Processing..." : "Deposit SOL"}
+                {isLoading ? "Processing..." : "Deposit ETH"}
               </Button>
             </CardContent>
           </Card>
@@ -192,13 +192,13 @@ export function WalletManagement() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Upload className="w-5 h-5" />
-                Withdraw SOL
+                Withdraw ETH
               </CardTitle>
-              <CardDescription>Send SOL to external address (Demo)</CardDescription>
+              <CardDescription>Send ETH to external address (Demo)</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="withdraw-amount">Amount (SOL)</Label>
+                <Label htmlFor="withdraw-amount">Amount (ETH)</Label>
                 <Input
                   id="withdraw-amount"
                   type="number"
@@ -212,7 +212,7 @@ export function WalletManagement() {
                 <Label htmlFor="withdraw-address">Destination Address</Label>
                 <Input
                   id="withdraw-address"
-                  placeholder="Enter Solana address"
+                  placeholder="Enter Ethereum address"
                   value={withdrawAddress}
                   onChange={(e) => setWithdrawAddress(e.target.value)}
                 />
@@ -222,7 +222,7 @@ export function WalletManagement() {
                 disabled={!withdrawAmount || !withdrawAddress || isLoading}
                 className="w-full"
               >
-                {isLoading ? "Processing..." : "Withdraw SOL"}
+                {isLoading ? "Processing..." : "Withdraw ETH"}
               </Button>
             </CardContent>
           </Card>

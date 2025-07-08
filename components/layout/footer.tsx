@@ -15,7 +15,7 @@ export function Footer() {
               <span className="font-medium text-white text-xl">EthBee</span>
             </Link>
             <p className="mb-4 text-gray-400">
-              AI-powered Solana trading assistant that simplifies your crypto journey.
+              AI-powered Ethereum trading assistant that simplifies your crypto journey.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-yellow-400">

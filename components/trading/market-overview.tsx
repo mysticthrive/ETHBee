@@ -37,7 +37,7 @@ export function MarketOverview({ selectedToken }: MarketOverviewProps) {
     <div className="h-full bg-gray-900/50 border border-yellow-500/20 rounded-lg overflow-hidden flex flex-col">
       <div className="p-4 border-b border-yellow-500/20">
         <h3 className="text-white font-semibold">Market Overview</h3>
-        <p className="text-gray-400 text-sm">Top Solana tokens</p>
+        <p className="text-gray-400 text-sm">Top Ethereum tokens</p>
       </div>
 
       <div className="flex-1 overflow-auto">

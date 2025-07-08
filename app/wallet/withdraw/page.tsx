@@ -45,9 +45,9 @@ export default function WithdrawPage() {
       return
     }
 
-    // Basic Solana address validation
+    // Basic Ethereum address validation
     if (withdrawAddress.length < 32 || withdrawAddress.length > 44) {
-      setMessage({ type: "error", text: "Please enter a valid Solana address" })
+      setMessage({ type: "error", text: "Please enter a valid Ethereum address" })
       return
     }
 
@@ -155,7 +155,7 @@ export default function WithdrawPage() {
                     <AlertTriangle className="flex-shrink-0 mt-0.5 w-4 h-4 text-orange-400" />
                     <div className="text-orange-300 text-sm">
                       <p className="font-medium">Transaction Fees</p>
-                      <p className="text-orange-400 text-xs">Small network fees may apply for Solana transactions</p>
+                      <p className="text-orange-400 text-xs">Small network fees may apply for Ethereum transactions</p>
                     </div>
                   </div>
                 </div>
@@ -167,9 +167,9 @@ export default function WithdrawPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-white">
                   <Upload className="w-5 h-5 text-red-400" />
-                  Withdraw SOL
+                  Withdraw ETH
                 </CardTitle>
-                <CardDescription className="text-gray-400">Send SOL to external Solana address</CardDescription>
+                <CardDescription className="text-gray-400">Send ETH to external Ethereum address</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
@@ -178,7 +178,7 @@ export default function WithdrawPage() {
                   </Label>
                   <Input
                     id="withdraw-address"
-                    placeholder="Enter Solana wallet address"
+                    placeholder="Enter Ethereum wallet address"
                     value={withdrawAddress}
                     onChange={(e) => setWithdrawAddress(e.target.value)}
                     className="bg-gray-800 border-gray-700 font-mono text-white text-sm"
@@ -188,7 +188,7 @@ export default function WithdrawPage() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
                     <Label htmlFor="withdraw-amount" className="text-gray-300">
-                      Amount (SOL)
+                      Amount (ETH)
                     </Label>
                     <Button
                       variant="link"
@@ -274,9 +274,9 @@ export default function WithdrawPage() {
             <CardContent className="space-y-3 text-gray-300">
               <div className="space-y-2 text-sm">
                 <p>• Double-check the destination address before confirming</p>
-                <p>• Solana transactions are irreversible once confirmed</p>
+                <p>• Ethereum transactions are irreversible once confirmed</p>
                 <p>• Always send a small test amount first for new addresses</p>
-                <p>• Keep some SOL in your wallet for future transaction fees</p>
+                <p>• Keep some ETH in your wallet for future transaction fees</p>
               </div>
             </CardContent>
           </Card>

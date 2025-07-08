@@ -73,7 +73,7 @@ export function Roadmap() {
             Our <span className="text-yellow-400">Roadmap</span>
           </h2>
           <p className="mx-auto max-w-2xl text-gray-400">
-            Follow our journey as we build the future of AI-powered Solana trading. Here's what we're working on and
+            Follow our journey as we build the future of AI-powered Ethereum trading. Here's what we're working on and
             what's coming next.
           </p>
         </div>

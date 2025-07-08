@@ -36,7 +36,7 @@ export function PrivacyPolicyContent() {
           <ul>
             <li>Account information: When you create an account, we collect your name, email address, and password.</li>
             <li>
-              Wallet information: When you connect your Solana wallet, we collect your wallet address and transaction
+              Wallet information: When you connect your Ethereum wallet, we collect your wallet address and transaction
               history.
             </li>
             <li>

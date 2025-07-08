@@ -98,7 +98,7 @@ export function AIChatInterface({ onTokenMention }: AIChatInterfaceProps) {
     {
       id: "welcome-message",
       content:
-        "🐝 Welcome to EthBee! I'm your intelligent trading assistant powered by advanced AI. I can help you execute trades, monitor markets, and manage your Solana portfolio with natural language commands. What would you like to do today?",
+        "🐝 Welcome to EthBee! I'm your intelligent trading assistant powered by advanced AI. I can help you execute trades, monitor markets, and manage your Ethereum portfolio with natural language commands. What would you like to do today?",
       role: "assistant",
       timestamp: new Date(),
     },

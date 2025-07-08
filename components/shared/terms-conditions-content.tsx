@@ -32,7 +32,7 @@ export function TermsConditionsContent() {
             <li>"EthBee," "we," "us," and "our" refer to the EthBee platform and its operators.</li>
             <li>"User," "you," and "your" refer to the individual or entity using our services.</li>
             <li>"Services" refers to all features, applications, and services offered by EthBee.</li>
-            <li>"Solana" refers to the Solana blockchain network and its native cryptocurrency.</li>
+            <li>"Ethereum" refers to the Ethereum blockchain network and its native cryptocurrency.</li>
           </ul>
 
           <h2>Account Registration</h2>
@@ -49,7 +49,7 @@ export function TermsConditionsContent() {
           </ul>
 
           <h2>Wallet Connection</h2>
-          <p>Our services require connection to a Solana wallet. By connecting your wallet, you:</p>
+          <p>Our services require connection to a Ethereum wallet. By connecting your wallet, you:</p>
           <ul>
             <li>Confirm that you are the legitimate owner or authorized user of the wallet</li>
             <li>Understand that EthBee does not store your private keys</li>

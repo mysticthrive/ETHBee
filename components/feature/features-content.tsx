@@ -114,7 +114,7 @@ export function FeaturesContent() {
             Powerful <span className="text-yellow-400">Features</span> to Enhance Your Trading
           </h1>
           <p className="mb-8 text-gray-400 text-xl">
-            Discover how EthBee's innovative tools can transform your Solana trading experience with AI-powered insights
+            Discover how EthBee's innovative tools can transform your Ethereum trading experience with AI-powered insights
             and automation.
           </p>
         </motion.div>
@@ -125,14 +125,14 @@ export function FeaturesContent() {
         <FeatureCard
           icon={<MessageSquareText className="w-6 h-6 text-yellow-400" />}
           title="AI Trading Assistant"
-          description="Our intelligent chatbot helps you buy and sell Solana tokens with natural language prompts. No more complex interfaces or confusing trading terms."
+          description="Our intelligent chatbot helps you buy and sell Ethereum tokens with natural language prompts. No more complex interfaces or confusing trading terms."
           delay={0.1}
         />
 
         <FeatureCard
           icon={<LayoutDashboard className="w-6 h-6 text-yellow-400" />}
           title="Portfolio Dashboard"
-          description="Manage your Solana assets with our intuitive dashboard. Track performance, visualize growth, and execute trades with a single click."
+          description="Manage your Ethereum assets with our intuitive dashboard. Track performance, visualize growth, and execute trades with a single click."
           delay={0.2}
           gradient="from-blue-400/20 to-cyan-600/20"
         />
@@ -148,7 +148,7 @@ export function FeaturesContent() {
         <FeatureCard
           icon={<Users className="w-6 h-6 text-yellow-400" />}
           title="Social Engagement Monitoring"
-          description="Track social sentiment and community engagement for Solana tokens to identify emerging trends before they impact prices."
+          description="Track social sentiment and community engagement for Ethereum tokens to identify emerging trends before they impact prices."
           delay={0.4}
           gradient="from-green-400/20 to-emerald-600/20"
         />
@@ -255,7 +255,7 @@ export function FeaturesContent() {
       <FeatureShowcase
         title="AI-Powered Trading"
         highlightedText="Revolution"
-        description="EthBee combines cutting-edge artificial intelligence with deep Solana ecosystem knowledge to provide you with the most advanced trading platform available."
+        description="EthBee combines cutting-edge artificial intelligence with deep Ethereum ecosystem knowledge to provide you with the most advanced trading platform available."
         bulletPoints={[
           "Natural language trading commands",
           "Predictive market analysis",
@@ -281,7 +281,7 @@ export function FeaturesContent() {
           Ready to <span className="text-yellow-400">Transform</span> Your Trading?
         </h2>
         <p className="mb-8 text-gray-400 text-xl">
-          Join thousands of traders who are already using EthBee to enhance their Solana trading experience.
+          Join thousands of traders who are already using EthBee to enhance their Ethereum trading experience.
         </p>
         <div className="flex sm:flex-row flex-col justify-center items-center gap-4">
           <CustomButton customVariant="gradient" size="lg">

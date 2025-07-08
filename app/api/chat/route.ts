@@ -315,7 +315,7 @@ async function executeAction(functionName: string, args: any, userId?: string) {
     default:
       return {
         content:
-          "I'm not sure how to process that request. You can ask me to buy, sell, or get information about Solana tokens.",
+          "I'm not sure how to process that request. You can ask me to buy, sell, or get information about Ethereum tokens.",
       }
   }
 }
@@ -323,6 +323,8 @@ async function executeAction(functionName: string, args: any, userId?: string) {
 export async function POST(req: Request) {
   try {
     const { messages, userId, currentTime, timezone } = await req.json()
+
+    console.log("+++++++++messages+++++++++++", messages)
 
     console.log("Processing chat with messages:", messages?.length || 0)
     console.log("User ID:", userId)
@@ -357,15 +359,15 @@ export async function POST(req: Request) {
 
       const systemMessage = {
         role: "system",
-        content: `You are EthBee, an intelligent Solana trading assistant powered by advanced AI. You help users execute trades, monitor markets, and manage their Solana portfolio with natural language commands.
+        content: `You are EthBee, an intelligent Ethereum trading assistant powered by advanced AI. You help users execute trades, monitor markets, and manage their Ethereum portfolio with natural language commands.
 
 CURRENT CONTEXT:
 - Current Time: ${formattedTime}
 - User Timezone: ${userTimezone}
 
 CRITICAL INSTRUCTIONS:
-1. Solana addresses are CASE-SENSITIVE. You MUST PRESERVE THE EXACT CASE of any token address provided by the user.
-2. Users may provide only token symbols (like SOL, USDC, BONK). If the request is vague, ask follow-up questions for clarity.
+1. Ethereum addresses are CASE-SENSITIVE. You MUST PRESERVE THE EXACT CASE of any token address provided by the user.
+2. Users may provide only token symbols (like ETH, USDC, BONK). If the request is vague, ask follow-up questions for clarity.
 3. Maintain context from conversation history to understand follow-up questions and references to previous messages.
 4. When handling time-based conditions, use the current time and timezone provided above for accurate calculations.
 5. IMPORTANT: Always provide time values in the user's timezone (${userTimezone}) - the system will automatically convert them to UTC for storage.
@@ -393,6 +395,8 @@ Always be helpful, clear, and confirm user intentions before executing trades.`,
       }
 
       const conversationWithSystem = [systemMessage, ...messages]
+
+      console.log("+++++++++conversationWithSystem+++++++++++", conversationWithSystem)
 
       const response = await openai.chat.completions.create({
         model: "gpt-4o",
