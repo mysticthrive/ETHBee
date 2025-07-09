@@ -384,9 +384,9 @@ AVAILABLE FUNCTIONS:
 - **Notifications**: Set up alerts for when conditions are met
 
 EXAMPLES:
-- "Buy 0.5 SOL immediately" → Executes immediately
+- "Buy 0.5 ETH immediately" → Executes immediately
 - "Buy 10 BONK when price drops below $0.00002" → Conditional order
-- "Sell 2 SOL between 2-4 PM today" → Time-based condition (in user's timezone)
+- "Sell 2 ETH between 2-4 PM today" → Time-based condition (in user's timezone)
 - "Buy 5 USDC when price is above $1.01 AND after 3 PM" → Combined conditions
 - "Check my balance" → Portfolio overview
 - "Get info about BONK" → Token information
@@ -452,7 +452,7 @@ Always be helpful, clear, and confirm user intentions before executing trades.`,
         }
       } else {
         parsedResponse = {
-          content: "I couldn't understand that request. Please try something like 'Buy 0.5 SOL' or 'Check my balance'.",
+          content: "I couldn't understand that request. Please try something like 'Buy 0.5 ETH' or 'Check my balance'.",
         }
       }
 
@@ -463,7 +463,7 @@ Always be helpful, clear, and confirm user intentions before executing trades.`,
       // Fallback to mock response
       const mockResponse = {
         content:
-          "I'm your EthBee AI assistant! This is a demo version. In your local environment with proper API keys, I can execute real trades. Try commands like 'Buy 0.5 SOL' or 'Check my balance'.",
+          "I'm your EthBee AI assistant! This is a demo version. In your local environment with proper API keys, I can execute real trades. Try commands like 'Buy 0.5 ETH' or 'Check my balance'.",
       }
 
       return NextResponse.json({ response: mockResponse })

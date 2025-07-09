@@ -255,7 +255,7 @@ export function AIChatInterface({ onTokenMention }: AIChatInterfaceProps) {
       const errorMessage: MessageType = {
         id: generateUniqueId(),
         content:
-          "I apologize, but I encountered an issue processing your request. This is a demo environment - in your local setup with proper API keys, all trading functions work seamlessly. Try commands like 'Buy 0.5 SOL' or 'Check my balance'.",
+          "I apologize, but I encountered an issue processing your request. This is a demo environment - in your local setup with proper API keys, all trading functions work seamlessly. Try commands like 'Buy 0.5 ETH' or 'Check my balance'.",
         role: "assistant",
         timestamp: new Date(),
       }
