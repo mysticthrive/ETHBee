@@ -248,12 +248,49 @@ async function executeAction(functionName: string, args: any, userId?: string) {
       }
 
     case "get_token_info":
-      const tokenSymbol = args.token_symbol || "SOL"
+      const tokenSymbol = args.token_symbol || "ethereum"
       const price = mockPrices[tokenSymbol.toUpperCase()] || 1.0
       const priceChange = (Math.random() - 0.5) * 10
 
+      const url = `https://api.coingecko.com/api/v3/coins/${args.token_symbol.toLowerCase()}`;
+
+      console.log(args.token_symbol, "*****************");
+
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const name = data.name;
+        const symbol = data.symbol.toUpperCase();
+        const price = data.market_data.current_price.usd;
+        const change24h = data.market_data.price_change_percentage_24h;
+        const marketCap = data.market_data.market_cap.usd;
+        const volume24h = data.market_data.total_volume.usd;
+
+        // Formatters
+        const currencyFormat = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          maximumFractionDigits: 2,
+        });
+
+        const percentFormat = new Intl.NumberFormat('en-US', {
+          style: 'percent',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+
+        console.log(`📊 ${name} (${symbol})`);
+        console.log(`💰 Current Price: ${currencyFormat.format(price)}`);
+        console.log(`📈 24h Change: ${change24h.toFixed(2)}%`);
+        console.log(`🏦 Market Cap: ${currencyFormat.format(marketCap)}`);
+        console.log(`💧 Liquidity (24h Volume): ${currencyFormat.format(volume24h)}`);
+      } catch (err) {
+        console.error("Failed to fetch token info:", err);
+      }
+
       return {
-        content: `Here's information about ${tokenSymbol}:\n\n💰 **Current Price:** $${price.toFixed(4)}\n📈 **24h Change:** ${priceChange >= 0 ? "+" : ""}${priceChange.toFixed(2)}%\n📊 **Market Cap:** $${(Math.random() * 50 + 5).toFixed(1)}B\n💧 **Liquidity:** High\n\nNote: This is demo data for v0 preview.`,
+        content: `Here's information about ${tokenSymbol}:\n\n💰 **Current Price:** $${price.toFixed(4)}\n📈 **24h Change:** ${priceChange >= 0 ? "+" : ""}${priceChange.toFixed(2)}%\n📊 **Market Cap:** $${(Math.random() * 50 + 5).toFixed(1)}B\n💧 **Liquidity:** High`,
         executedAction: {
           type: "get_token_info",
           asset: tokenSymbol,
@@ -367,7 +404,7 @@ CURRENT CONTEXT:
 
 CRITICAL INSTRUCTIONS:
 1. Ethereum addresses are CASE-SENSITIVE. You MUST PRESERVE THE EXACT CASE of any token address provided by the user.
-2. Users may provide only token symbols (like ETH, USDC, BONK). If the request is vague, ask follow-up questions for clarity.
+2. Users may enter token names or symbols in any form (e.g., ETH, eth, Ethereum, etherum, etc.). The system will automatically normalize the input by converting it to lowercase and correcting common variations or misspellings (e.g., 'etherum' → 'ethereum'). If a token is not supported (e.g., 'solana'), the system will notify the user with a message like: "Solana is not supported yet.
 3. Maintain context from conversation history to understand follow-up questions and references to previous messages.
 4. When handling time-based conditions, use the current time and timezone provided above for accurate calculations.
 5. IMPORTANT: Always provide time values in the user's timezone (${userTimezone}) - the system will automatically convert them to UTC for storage.
@@ -385,11 +422,11 @@ AVAILABLE FUNCTIONS:
 
 EXAMPLES:
 - "Buy 0.5 ETH immediately" → Executes immediately
-- "Buy 10 BONK when price drops below $0.00002" → Conditional order
+- "Buy 10 ETH when price drops below $3000" → Conditional order
 - "Sell 2 ETH between 2-4 PM today" → Time-based condition (in user's timezone)
-- "Buy 5 USDC when price is above $1.01 AND after 3 PM" → Combined conditions
+- "Buy 5 ETH when price is above $3000 AND after 3 PM" → Combined conditions
 - "Check my balance" → Portfolio overview
-- "Get info about BONK" → Token information
+- "Get info about ETH" → Token information
 
 Always be helpful, clear, and confirm user intentions before executing trades.`,
       }
